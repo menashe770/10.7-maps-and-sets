@@ -31,3 +31,19 @@ function vowelCount(string) {
   }
   return newMap;
 }
+
+// REVISED
+function vowelCount2(string) {
+  const vowelMap = new Map();
+  let strLower = string.toLowerCase();
+  for (x of strLower) {
+    if ('aeiou'.includes(x)) {
+      if (vowelMap.has(x)) {
+        vowelMap.set(x, vowelMap.get(x) + 1);
+      } else {
+        vowelMap.set(x, 1);
+      }
+    }
+  }
+  return vowelMap;
+}
